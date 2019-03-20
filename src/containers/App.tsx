@@ -6,7 +6,9 @@ export class App extends React.Component<{}, { spec: any }> {
 
   constructor(props: {}) {
     super(props);
-    this.state = { spec: require('../../spec/petstore.oas2.json') };
+    this.state = { 
+      spec: require('../../spec/petstore.oas2.json') 
+    };
   }
 
   render() {
