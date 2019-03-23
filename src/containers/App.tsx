@@ -1,22 +1,20 @@
 import * as React from 'react';
-import { TreeView } from '../components/TreeView';
-import { diagnose } from '../util/linting';
+import TreeView from '../components/TreeView';
+import { connect } from 'react-redux';
+import Editor from '../components/Editor';
 
-export class App extends React.Component<{}, { spec: any }> {
-
-  constructor(props: {}) {
-    super(props);
-    this.state = { 
-      spec: require('../../spec/petstore.oas2.json') 
-    };
-  }
-
+export class App extends React.Component<any, any> {
+  
   render() {
     return (
-      <TreeView
-        spec={this.state.spec}
-        diagnostics={diagnose(this.state.spec)} />
+      <div style={{display: 'flex'}}>
+        <TreeView/>
+        <Editor/>
+      </div>
     );
   }
 
 }
+
+export default connect()(App);
+
