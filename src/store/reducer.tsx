@@ -1,14 +1,9 @@
-import { diagnose } from '../util/linting';
-import { IRuleResult } from '@stoplight/spectral';
-
 export type State = {
-    spec: any,
-    diagnostics: IRuleResult[]
+    spec: any
 };
 
 const initialState: State = {
-    spec: require('../../spec/petstore.oas2.json'),
-    diagnostics: diagnose(this.spec)
+    spec: require('../../spec/petstore.oas2.json')
 };
 
 const reducer: any = (state = initialState, action: any) => {
