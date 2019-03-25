@@ -5,11 +5,12 @@ class Editor extends React.Component<any, any> {
 
     render() {
         return(
-            <textarea style={{width: "800px", overflowY: "scroll"}} 
-            className="editor-field" 
-            name="editor" 
-            defaultValue={JSON.stringify(this.props.spec, undefined, 2)}
-            onChange={(event) => this.props.onTextChange(event.target.value)}>
+            <textarea
+                className="editor-field" 
+                name="editor" 
+                defaultValue={JSON.stringify(this.props.spec, undefined, 2)}
+                onChange={(event) => this.props.onTextChange(event.target.value)}
+            >
             </textarea>
         )
     }

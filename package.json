@@ -1,6 +1,6 @@
 {
   "name": "swagger-editor",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Swagger Editor",
   "main": "src/index.ts",
   "scripts": {
@@ -23,5 +23,9 @@
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "typings-for-css-modules-loader": "^1.7.0"
+  }
 }

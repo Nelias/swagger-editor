@@ -5,7 +5,7 @@ import { IRuleResult } from '@stoplight/spectral';
 import { diagnose } from '../util/linting';
 
 export interface TreeViewProps extends React.HTMLProps<HTMLUListElement> { 
-  spec: any
+  spec: object
 }
 
 class TreeView extends React.Component<TreeViewProps, any> {
@@ -49,7 +49,7 @@ class TreeView extends React.Component<TreeViewProps, any> {
         if (elem === currentProblem.path[0]) {
           checkedErrors = [];
           checkedErrors.push(elem);
-          return `${elem}ててて`;
+          return `${elem}てて`;
         }
 
         if (checkedErrors.length !== 0) {
@@ -61,9 +61,9 @@ class TreeView extends React.Component<TreeViewProps, any> {
               
               if (checkedErrors.length === currentProblem.path.length) {
                 checkedErrors = [checkedErrors[0]];
-                return `${elem}ててて`;
+                return `${elem}てて`;
               } else {
-                return `${elem}ててて`;
+                return `${elem}てて`;
               }
             }
           }
@@ -85,8 +85,8 @@ class TreeView extends React.Component<TreeViewProps, any> {
         return "</ul>";
       }
 
-      if (elem.match(/ててて/)) {
-        return `<h1>${elem.slice(0, -3)}</h1>`;
+      if (elem.match(/てて/)) {
+        return `<li><span class="warning">${elem.slice(0, -3)}</span></li>`;
       }
   
       return `<li>${elem}</li>`;
@@ -94,7 +94,7 @@ class TreeView extends React.Component<TreeViewProps, any> {
     });
   
     return (
-      <div style={{height: "500px", overflowY: "scroll"}} className="swagger-tree" dangerouslySetInnerHTML={{__html: htmlTree.join(" ")}} />
+      <div className="swagger-tree" dangerouslySetInnerHTML={{__html: htmlTree.join(" ")}} />
     );
   }
 }

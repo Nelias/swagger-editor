@@ -1,5 +1,5 @@
 export type State = {
-    spec: any
+    spec: object
 };
 
 const initialState: State = {
