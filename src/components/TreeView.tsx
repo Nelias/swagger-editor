@@ -86,7 +86,7 @@ class TreeView extends React.Component<TreeViewProps, any> {
       }
 
       if (elem.match(/てて/)) {
-        return `<li><span class="warning">${elem.slice(0, -3)}</span></li>`;
+        return `<li><span class="warning">${elem.slice(0, -2)}</span></li>`;
       }
   
       return `<li>${elem}</li>`;

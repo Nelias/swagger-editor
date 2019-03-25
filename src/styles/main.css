@@ -56,19 +56,31 @@ li:before {
 
 .swagger-tree {
     height: 85vh;
-    padding: 0 2vw 0 0.5vw;
+    padding: 0 3vw 0 0.5vw;
 }
 
 .editor-field {
-    width: 70%;
+    width: 68%;
     color: white;
 }
 
 .swagger-tree, .editor-field {
     overflow-y: scroll;
+    overflow-x: hidden;
     border: 3px solid black;
     border-radius: 7px;
     background-color: #222;
+}
+
+.swagger-tree::-webkit-scrollbar, .editor-field::-webkit-scrollbar {
+	width: 10px;
+	background-color: #444;
+}
+
+.swagger-tree::-webkit-scrollbar-thumb, .editor-field::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#999), to(#999), color-stop(.6,#bbb));
 }
 
 @media screen and (max-width: 1024px) {
