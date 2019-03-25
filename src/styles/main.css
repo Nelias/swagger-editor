@@ -2,17 +2,32 @@ html {
     background: #111;
 }
 
+.app-title {
+    margin: 1vw 0 1.75vw 0;
+    
+    font-family: sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    background: greenyellow;
+    background: -webkit-linear-gradient(orange, greenyellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.app-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
 li, ul {
     line-height: 1.7;
-    font-family: arial;
     list-style: none;
 }
 
 li:before {
     content: "\2023"; 
-    color: greenyellow;   
-    font-size: 17px; 
-   
+    color: greenyellow;      
     position: relative;
     top: 0; 
     padding-right: 0.5vw; 
@@ -35,33 +50,19 @@ li:before {
     border-radius: 50%;
 }
 
-.app-title {
-    margin: 1vw 0 1.75vw 0;
-    
-    color: white;
-    font-size: 2vw;
-    font-family: sans-serif;
-    text-align: center;
-    background: greenyellow;
-    background: -webkit-linear-gradient(orange, greenyellow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.app-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    color: white;
-}
-
 .swagger-tree {
     height: 85vh;
     padding: 0 3vw 0 0.5vw;
+
+    font-family: sans-serif;
+    font-size: 17px;
 }
 
 .editor-field {
     width: 68%;
     padding: 0 0.5vw;
+
+    font-size: 16px;
     color: white;
 }
 
@@ -70,24 +71,32 @@ li:before {
     overflow-x: hidden;
     border: 3px solid black;
     border-radius: 7px;
-    background-color: #222;
+    background-color: #222222;
 }
 
 .swagger-tree::-webkit-scrollbar, .editor-field::-webkit-scrollbar {
 	width: 7px;
-	background-color: #444;
+	background-color: #444444;
 }
 
 .swagger-tree::-webkit-scrollbar-thumb, .editor-field::-webkit-scrollbar-thumb {
 	border-radius: 13px;
-	background-color: #FFF;
+	background-color: white;
 	background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(rgb(156, 235, 37)), to(rgb(108, 173, 9)), color-stop(.6,rgb(143, 218, 31)));
 }
 
 @media screen and (max-width: 1024px) {
     .app-title {
         font-size: 5vw;
-        margin: 4vw 0 5vw 0;
+        margin: 3vw 0 5vw 0;
+    }
+
+    .editor-field {
+        width: 50%;
+    }
+
+    .swagger-tree, .editor-field {
+        font-size: 20px;
     }
 }
 
