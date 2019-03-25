@@ -71,3 +71,10 @@ li:before {
     background-color: #222;
 }
 
+@media screen and (max-width: 1024px) {
+    .app-title {
+        font-size: 5vw;
+        margin: 4vw 0 5vw 0;
+    }
+}
+
