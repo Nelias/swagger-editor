@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 import { connect } from 'react-redux';
 import { IRuleResult } from '@stoplight/spectral';
 import { diagnose } from '../util/linting';
@@ -32,7 +31,6 @@ class TreeView extends React.Component<TreeViewProps, any> {
           keysFromJSON.push("<-")
         }
       }
-  
     };
   
     extractKeys(this.props.spec);
@@ -45,15 +43,22 @@ class TreeView extends React.Component<TreeViewProps, any> {
       let currentProblem = this.diagnostics[i];
 
       keysFromJSON = keysFromJSON.map((elem: string) => {
+
+        let problemElem = () => {
+          if (currentProblem.severityLabel === 'warn') {
+            return `${elem}てて`;
+          } else {
+            return `${elem}文文`;
+          }
+        } 
   
         if (elem === currentProblem.path[0]) {
           checkedErrors = [];
           checkedErrors.push(elem);
-          return `${elem}てて`;
+          return problemElem();
         }
 
         if (checkedErrors.length !== 0) {
-
           for (let j: number = 0; j < currentProblem.path.length; j++) {
             if (elem === currentProblem.path[j] && checkedErrors.length === j) {
 
@@ -61,13 +66,12 @@ class TreeView extends React.Component<TreeViewProps, any> {
               
               if (checkedErrors.length === currentProblem.path.length) {
                 checkedErrors = [checkedErrors[0]];
-                return `${elem}てて`;
+                return problemElem();
               } else {
-                return `${elem}てて`;
+                return problemElem();
               }
             }
           }
-
         }
 
         return elem;
@@ -88,9 +92,12 @@ class TreeView extends React.Component<TreeViewProps, any> {
       if (elem.match(/てて/)) {
         return `<li><span class="warning">${elem.slice(0, -2)}</span></li>`;
       }
+
+      if (elem.match(/文文/)) {
+        return `<li><span class="error">${elem.slice(0, -2)}</span></li>`;
+      }
   
       return `<li>${elem}</li>`;
-  
     });
   
     return (
@@ -101,8 +108,7 @@ class TreeView extends React.Component<TreeViewProps, any> {
 
 const mapStateToProps = (state: any, ownProps: any = {}) => {
   return {
-    spec: state.spec,
-    diagnostics: state.diagnostics
+    spec: state.spec
   }
 };
 

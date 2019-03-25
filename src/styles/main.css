@@ -61,6 +61,7 @@ li:before {
 
 .editor-field {
     width: 68%;
+    padding: 0 0.5vw;
     color: white;
 }
 
@@ -73,14 +74,14 @@ li:before {
 }
 
 .swagger-tree::-webkit-scrollbar, .editor-field::-webkit-scrollbar {
-	width: 10px;
+	width: 7px;
 	background-color: #444;
 }
 
 .swagger-tree::-webkit-scrollbar-thumb, .editor-field::-webkit-scrollbar-thumb {
-	border-radius: 10px;
+	border-radius: 13px;
 	background-color: #FFF;
-	background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#999), to(#999), color-stop(.6,#bbb));
+	background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(rgb(156, 235, 37)), to(rgb(108, 173, 9)), color-stop(.6,rgb(143, 218, 31)));
 }
 
 @media screen and (max-width: 1024px) {
