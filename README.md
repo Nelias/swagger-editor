@@ -5,7 +5,7 @@ Built with TypeScript + React + Redux + Webpack + Stoplight
 
 <div>
 <img src="https://hackr.io/tutorials/typescript/logo-typescript.svg?ver=1550646462" width="70" height="70">
-<img src="https://www.shareicon.net/download/2016/07/08/117367_logo.ico" width="70" height="70">
+<img src="https://cdn.auth0.com/blog/react-js/react.png" width="70" height="70">
 <img src="https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/386/square_256/redux.png" width="70" height="70">
 <img src="https://webpack.js.org/assets/icon-square-small-slack.png" width="70" height="70">
 <img src="https://s3.amazonaws.com/totem_production/assets/logos/10721/asset_table/mark_light_bg.png?1441669496" width="70" height="70">
